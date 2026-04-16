@@ -1,0 +1,27 @@
+{
+  "rows": 16,
+  "columns": 4,
+  "mine_probability": 21,
+  "mine_color": [
+    220,
+    50,
+    50
+  ],
+  "flag_color": [
+    34,
+    139,
+    34
+  ],
+  "revealed_color": [
+    255,
+    215,
+    0
+  ],
+  "unrevealed_color": [
+    0,
+    180,
+    180
+  ],
+  "mine_image_path": "",
+  "flag_image_path": ""
+}

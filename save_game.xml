@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<GameState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Rows>13</Rows>
+  <Columns>8</Columns>
+  <Mines>20</Mines>
+</GameState>
