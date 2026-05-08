@@ -1,0 +1,42 @@
+name: CI/CD Pipeline – Test & Lint
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  test-and-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Pytest with HTML report
+        run: |
+          pytest --html=reports/pytest_report.html --self-contained-html
+
+      - name: Run Flake8 lint
+        run: |
+          flake8 core/ serializers/ --max-line-length=100 \
+            --exclude=__pycache__ \
+            --format=default \
+            --output-file=reports/flake8_report.txt || true
+          cat reports/flake8_report.txt
+
+      - name: Upload test report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports
+          path: reports/
