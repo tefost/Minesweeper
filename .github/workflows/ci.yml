@@ -10,6 +10,9 @@ jobs:
   test-and-lint:
     runs-on: ubuntu-latest
 
+    env:
+      PYTHONPATH: ${{ github.workspace }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -24,6 +27,7 @@ jobs:
 
       - name: Run Pytest with HTML report
         run: |
+          mkdir -p reports
           pytest --html=reports/pytest_report.html --self-contained-html
 
       - name: Run Flake8 lint
