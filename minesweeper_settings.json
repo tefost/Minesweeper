@@ -1,6 +1,6 @@
 {
-  "rows": 16,
-  "columns": 4,
+  "rows": 6,
+  "columns": 9,
   "mine_probability": 21,
   "mine_color": [
     220,

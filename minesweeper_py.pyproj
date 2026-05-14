@@ -12,6 +12,7 @@
     <OutputPath>.</OutputPath>
     <Name>minesweeper_py</Name>
     <RootNamespace>PythonApplication2</RootNamespace>
+    <TestFramework>Pytest</TestFramework>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
